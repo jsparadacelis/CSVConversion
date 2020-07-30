@@ -6,22 +6,6 @@ import (
 	"os"
 )
 
-type School struct {
-	id         int
-	name       string
-	phone      string
-	address    string
-	city       string
-	state      string
-	zip        string
-	schoolType string
-	principal  string
-	website    string
-	other      string
-	image      string
-	active     bool
-}
-
 func main() {
 
 	fileContent, err := os.Open("C2ImportSchoolSample.csv")
@@ -36,8 +20,10 @@ func main() {
 	allRecords, _ := reader.ReadAll()
 	headers := allRecords[0]
 	fmt.Println("headers", headers)
-	resultList := make([]School, 0, 5)
-	for index, record := range allRecords[1:] {
-		fmt.Println("index", index, "record", record)
+	// resultList := make([]School, 0, 5)
+	for _, record := range allRecords[1:] {
+
+		newSchool := NewSchool(record...)
+		fmt.Println(newSchool)
 	}
 }
