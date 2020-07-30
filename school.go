@@ -1,36 +1,36 @@
 package main
 
 type School struct {
-	id         string
-	name       string
-	phone      string
-	address    string
-	city       string
-	state      string
-	zip        string
-	schoolType string
-	principal  string
-	website    string
-	other      string
-	image      string
-	active     string
+	ID         string
+	Name       string
+	Phone      string
+	Address    string
+	City       string
+	State      string
+	Zip        string
+	SchoolType string
+	Principal  string
+	Website    string
+	Other      string
+	Image      string
+	Active     string
 }
 
 func NewSchool(args ...string) *School {
 	newSchool := School{
-		id:         args[0],
-		name:       args[1],
-		phone:      args[2],
-		address:    args[3],
-		city:       args[4],
-		state:      args[5],
-		zip:        args[6],
-		schoolType: args[7],
-		principal:  args[8],
-		website:    args[9],
-		other:      args[10],
-		image:      args[11],
-		active:     args[12],
+		ID:         args[0],
+		Name:       args[1],
+		Phone:      args[2],
+		Address:    args[3],
+		City:       args[4],
+		State:      args[5],
+		Zip:        args[6],
+		SchoolType: args[7],
+		Principal:  args[8],
+		Website:    args[9],
+		Other:      args[10],
+		Image:      args[11],
+		Active:     args[12],
 	}
 
 	return &newSchool

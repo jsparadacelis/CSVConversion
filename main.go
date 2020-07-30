@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/csv"
+	"encoding/json"
 	"fmt"
 	"os"
 )
@@ -18,12 +19,13 @@ func main() {
 
 	reader := csv.NewReader(fileContent)
 	allRecords, _ := reader.ReadAll()
-	headers := allRecords[0]
-	fmt.Println("headers", headers)
-	// resultList := make([]School, 0, 5)
+	resultList := make([]byte, 0, 5)
 	for _, record := range allRecords[1:] {
 
 		newSchool := NewSchool(record...)
-		fmt.Println(newSchool)
+		newSchoolJSON, _ := json.Marshal(*newSchool)
+		resultList = append(resultList, newSchoolJSON...)
 	}
+	fmt.Println(string(resultList))
+
 }
