@@ -6,13 +6,13 @@ import (
 )
 
 func main() {
+
 	testNumber := 12345
 	resultSum := giveMeSum(testNumber)
 	fmt.Println("La suma de las cifras de 12345 es 15", resultSum == 15)
 	testNumberBinary := 10
 	intToBinary := intToBinary(testNumberBinary)
 	fmt.Println("10 en binario es 1010", intToBinary == "1010")
-
 }
 
 func giveMeSum(testNumber int) int {
@@ -38,4 +38,11 @@ func intToBinary(testNumber int) string {
 		resultAsString = resultAsString + strconv.Itoa(resultBinary[i])
 	}
 	return resultAsString
+}
+
+func giveMeSumRecursive(testNumber int) int {
+	if testNumber < 10 {
+		return testNumber
+	}
+	return testNumber%10 + giveMeSumRecursive(testNumber/10)
 }
