@@ -16,8 +16,7 @@ func main() {
 	sliceName := make([]CompleteName, 0)
 
 	fmt.Println("Welcome, please insert the filename: ")
-	//fmt.Scan(&filename)
-	filename = "names.txt"
+	fmt.Scan(&filename)
 	data, err := ioutil.ReadFile(filename)
 	if err != nil {
 		fmt.Println("Error: ", err)
